@@ -1,0 +1,40 @@
+Deseja-se fazer uma pesquisa em um grupo de atletas, para os quais foi solicitado a altura e o sexo (M ou F) dessas pessoas. <br> 
+Faça um programa em linguagem JavaScript que calcule e escreva: <br> 
+>A média de altura das mulheres.<br> 
+>Número de homens <br> 
+O programa deve encerrar a solicitação de informações quando ler uma altura igual a zero.  <br> 
+Não devem ser usados vetores ou funções matemáticas prontas. <br> 
+O arquivo deve ser enviado no formato HTML <br> 
+Não perguntar total de pessoas. <br> 
+Parar quando ler uma altura igual a zero <br> 
+
+<hr><br>
+<script>   
+var altura
+var contMasc = 0
+var altMasc = 0
+var contFem = 0
+var altFem = 0
+
+while (altura != 0) {
+    altura = Number(prompt("Qual a altura do atleta em questão? Para parar o código, digite 0"))
+    if (altura == 0) {
+        break
+    }
+    var sexo = prompt("O atleta é Masculino ou Feminino? Use m ou f");
+    if (sexo == "m") {
+        contMasc++
+        altMasc = altMasc + altura
+    } else if (sexo == "f") {
+        contFem++
+        altFem = altFem + altura
+    } else if (altura == 0) {
+        break;
+    }
+} 
+var mediaFem = (altFem/contFem)
+document.write("Essa é a quantidade de jogadores masculinos: " + contMasc + ".<br>")
+document.write("Essa é a quantidade de jogadores femininos: " + contFem + ".<br>")
+document.write("Essa é a média de altura de jogadores femininos: " + mediaFem.toFixed(2) + ".<br>")
+
+</script>
